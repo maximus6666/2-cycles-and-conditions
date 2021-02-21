@@ -3,29 +3,25 @@ let finishNumberM = '';
 let totalSum = 0;
 //запускаємо питання
 do {
-  startNumberN = prompt('Введіть число N');
-} while ( !parseInt(startNumberN));
+  startNumberN = parseInt(prompt('Введіть число N'));
+} while (isNaN(startNumberN));
 
 do {
-  finishNumberM = prompt('Введіть число M');
-} while (!parseInt(finishNumberM));
-
-let parseStartNumberN = parseInt(startNumberN);
-let parseFinishNumberM = parseInt(finishNumberM);
-
+  finishNumberM = parseInt(prompt('Введіть число M'));
+} while (isNaN(finishNumberM));
 
 // запитуємось чи пропускати парні
 const passEven = confirm('Пропускати парні?');
 
 // цикл
-if (parseStartNumberN < parseFinishNumberM) {
-  for (let i = parseStartNumberN; i <= parseFinishNumberM; i++) {
+if (startNumberN < finishNumberM) {
+  for (let i = startNumberN; i <= finishNumberM; i++) {
     if (i % 2 === 0 && passEven) {
       continue;
     }
     totalSum += i;
   }
-  console.log(`Сума чисел з ${parseStartNumberN} по ${parseFinishNumberM}: ${totalSum}`);
+  console.log(`Сума чисел з ${startNumberN} по ${finishNumberM}: ${totalSum}`);
 } else {
   console.log('введіть число N менше за число М!');
 }
