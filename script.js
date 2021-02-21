@@ -1,5 +1,5 @@
-let startNumberN = '';
-let finishNumberM = '';
+let startNumberN = 0;
+let finishNumberM = 0;
 let totalSum = 0;
 //запускаємо питання
 do {
